@@ -1,463 +1,271 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-
-<head>
-    <meta charset="utf-8" />
-
-    <!-- Page Title -->
-    <title>Coming Soon</title>
-
-    <!-- Meta Tags -->
-
-
-    <!-- Viewport Meta-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url('v1/style.css')}}" />
+    <style>
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0); /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+      }
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <!-- Template Favicon & Icons End -->
+      /* Modal Content/Box */
+      .modal-content {
+        /* background-color: #fefefe; */
+        background-color: #191919;
+        margin: 10% auto; /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        border-radius: 20px;
+        width: 80%; /* Could be more or less, depending on screen size */
+      }
 
-    <!-- Facebook Metadata Start -->
-    <meta property="og:image:height" content="1200" />
-    <meta property="og:image:width" content="1200" />
+      /* The Close Button */
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
 
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="card">
+          <h4 style="font-family: 'Rubik'">
+            We are building the best experience for you , help us let you know
+            when we are ready by telling us
+            <!-- Are you interested in supporting other students grow" options to this yes, no, maybe. -->
+          </h4>
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label>Your profession?</label>
+                <select name="" id="">
+                  <option  value=""></option>
+                </select>
+              </div>
+            </div>
 
-    <!-- Facebook Metadata End -->
+            <div class="col">
+              <div class="form-group">
+                <label>your date of birth</label>
+                <!-- <input type="text"> -->
+                <input type="date" name="" id="" />
+              </div>
+            </div>
 
-    <!-- Template Styles Start -->
-    <link rel="stylesheet" type="text/css" href="css/loaders/loader.css" />
-    <link rel="stylesheet" type="text/css" href="{{ url('v1/css/plugins.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ url('v1/css/main.css') }}" />
-    <!-- Template Styles End -->
+            <div class="col">
+              <div class="form-group">
+                <label>Your email </label>
+                <!-- <input type="text"> -->
+                <input type="email" name="" id="" />
+              </div>
+            </div>
 
-
-    {{-- Toasttify --}}
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-    <!-- Custom Browser Color Start -->
-    <meta name="theme-color" content="#0e0d26" />
-    <meta name="msapplication-navbutton-color" content="#0e0d26" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="#0e0d26" />
-
-    <script>
-        $(window).load(function() {
-            $('#myModal').modal('show');
-        });
-    </script>
-
-    <!-- Custom Browser Color End -->
-</head><!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZRG17DB575"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-ZRG17DB575');
-</script>
-
-<body>
-    <!-- Old Browsers Support Start -->
-    <!--[if lt IE 9]>
-      <script src="js/libs/es5-shim.min.js"></script>
-      <script src="js/libs/html5shiv.min.js"></script>
-      <script src="js/libs/html5shiv-printshiv.min.js"></script>
-      <script src="js/libs/respond.min.js"></script>
-    <![endif]-->
-    <!-- Old Browsers Support End -->
-
-    <!-- Loader Start -->
-    <!-- <div class="loader">
-      <div class="loader__container">
-        <div class="loader__circle">
-          <img src="img/logo-loader.svg" alt="Marvio Template Loader Logo" />
+            <div class="col">
+              <input type="submit" value="Submit" />
+            </div>
+          </div>
         </div>
       </div>
-    </div> -->
-    <!-- Loader End -->
-
-    <!-- Menu Start -->
-    <nav id="menu" class="menu">
-        <div class="menu__content">
-            <div class="container-fluid p-0 fullheight">
-                <div class="row g-0 flex-xl-row-reverse fullheight">
-                    <!--Menu Data Block Start -->
-                    <div class="col-12 col-xl-8 menu__data">
-                        <!-- Menu Controls Line Start -->
-                        <div class="menudata__controls">
-                            <div class="controls__content">
-                                <div class="container-fluid p-0">
-                                    <div class="row g-0">
-                                        <div class="col-8">
-                                            <div
-                                                class="controls__leftline d-flex justify-content-start align-items-center">
-                                                <!-- Menu Socials Start -->
-                                                <div class="socials-menu">
-                                                    <ul>
-                                                        <li>
-                                                            <a href="https://www.facebook.com/" target="_blank">
-                                                                <i class="fa-brands fa-facebook"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="https://www.instagram.com/" target="_blank">
-                                                                <i class="fa-brands fa-instagram"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="https://twitter.com/" target="_blank">
-                                                                <i class="fa-brands fa-twitter"></i>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <!-- Menu Socials End -->
-                                            </div>
-                                        </div>
-                                        <div class="col-4">
-                                            <div
-                                                class="controls__rightline d-flex justify-content-end align-items-center">
-                                                <!-- Menu Close Button Start -->
-                                                <a id="menu-close" class="section-close hover-white hover-white-s"
-                                                    href="#0">
-                                                    <em></em>
-                                                    <span></span>
-                                                </a>
-                                                <!-- Menu Close Button End -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Menu Controls Line End -->
-
-                        <!-- Menu Links Start -->
-
-                        <!-- Menu Links End -->
-
-                        <!-- Menu Copyright Start -->
-                        <div class="menudata__copyright">
-                            <div class="container-fluid p-0">
-                                <div class="row g-0">
-                                    <div class="col-12">
-                                        <p class="copyright">
-                                            By
-                                            <a href="https://themeforest.net/user/mix_design/portfolio"
-                                                target="_blank">Mix Design</a>, 2022
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Menu Copyright End -->
-                    </div>
-                    <!--Menu Data Block End -->
-
-                    <!--Menu Media Block Start -->
-                    <div class="col-12 col-xl-4 menu__media">
-                        <div class="media__content">
-                            <!-- Menu Image Background Start -->
-                            <div class="menu__image menu-image-1"></div>
-                            <!-- Menu Image Background End -->
-                        </div>
-                    </div>
-                    <!--Menu Media Block End -->
-                </div>
-            </div>
-        </div>
-    </nav>
-    <!-- Menu End -->
-
-    <!-- Header Start -->
-    <header id="header" class="header">
-        <!-- Logo Start -->
-        <div class="header__logo">
-            <img width="100px" src="{{ url('/v1/logo.png') }}" style="width: 200px" />
-        </div>
-        <!-- Logo End -->
-
-        <!-- Header Content Start -->
-        <div class="header__content fullheight-mobile d-flex align-items-center">
-            <div class="container-fluid px-0">
-                <div class="row gx-0 justify-content-end justify-content-xl-start">
-                    <div class="col-auto col-xl-8">
-                        <!-- Header Controls Block Start -->
-                        <div class="header__buttons d-flex justify-content-end align-items-center">
-                            <!-- Socials Desktop Start -->
-
-                            <!-- Socials Desktop End -->
-
-                            <!-- Notify Trigger Start -->
-                            <!-- <a
-                  id="notify-trigger"
-                  class="btn-round-mobile btn-notify btn-light-outline notify-trigger hover-white hover-white-s"
-                  href="#0"
-                >
-                  <em></em>
-                  <i class="fa-solid fa-bell"></i>
-                  <span class="btn-caption">Notify Me</span>
-                </a> -->
-                            <!-- Notify Trigger End -->
-                        </div>
-                        <!-- Header Controls Block End -->
-                    </div>
-                    <div class="col-auto col-xl-4">
-                        <!-- Menu Trigger Start -->
-                        <div class="header__menu d-flex justify-content-end">
-                            <!-- <a id="menu-trigger" class="menu-trigger" href="#0">
-                  <span class="menu-objects"></span>
-
-                </a> -->
-                            <div class="socials-desktop">
-                                <ul>
-                                    <li>
-                                        <a href="https://www.facebook.com/" target="_blank">
-                                            <i class="fa-brands fa-facebook"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.instagram.com/" target="_blank">
-                                            <i class="fa-brands fa-instagram"></i>
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="https://twitter.com/" target="_blank">
-                                            <i class="fa-brands fa-twitter"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Menu Trigger End -->
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Header Content End -->
-    </header>
-    <!-- Header End -->
-
-    <!-- Main Section Start -->
-    <!-- <div id="particles-js"> -->
-    <section id="main" class="main active">
-        <div class="main__content">
-            <div class="container-fluid p-0 fullheight">
-                <div class="row g-0 fullheight">
-                    <!-- Main Section Intro Start -->
-                    <span class="h1 headline brand"
-                        style="text-align: left;font: normal 600  &quot;Poppins&quot;, sans-serif;color: #fffadc;">Network,
-                        Explore & Grow</span>
-                    <div class="col-12 col-xl-8 main__intro">
-                        <!-- Intro Content Start -->
-                        <div class="intro__content">
-                            <!-- Headline Start -->
-                            <div id="headline" class="headline">
-                                {{-- <span style="color: #fffadc;" class="headline__subtitle">Launching
-                                    soon......</span> --}}
-                                <h1>Get Notified When<br>
-                                    We Launch</h1>
-                                <!-- Menu Notify Trigger Start -->
-                                <form action="{{ route('comingSoon.notify') }}" method="POST" style="display:flex"
-                                    class=" form noti form-light">
-                                    @csrf
-                                    <input name="email" style="width: 400px;" class="block-rounded-s" type="email"
-                                        placeholder="Your Email" required />
-                                    {{-- <input style="margin-left: 17px"
-                                        class="btn-caption btn btn-l btn-light hover-gradient hover-gradient-l"
-                                        type="submit" value="Submit"> --}}
-                                    <button style="margin-left: 17px"
-                                        class="btn btn-l btn-light hover-gradient hover-gradient-l" type="submit">
-                                        <em></em>
-
-                                        <span s;">Submit</span>
-                                    </button>
-                                </form>
-                                <!-- Menu Notify Trigger End -->
-                            </div>
-
-                            <!-- Headline End -->
-                        </div>
-                        <!-- Intro Content End -->
-
-                        <!-- Bottom Button Start -->
-
-                        <!-- Bottom Button End -->
-                    </div>
-                    <!-- Main Section Intro End -->
-
-                    <!-- Main Section Media Start -->
-                    <div class="col-12 col-xl-4 main__media">
-                        <!-- width: 392px; -->
-                        <!-- Main Section Image Background Start -->
-                        <div class="media__image media-image-2">
-                            <!-- <img width="392px" src="shuttle.png" alt="" srcset=""> -->
-                            <img width="600px" src="{{ url('v1/rocket.gif') }}" alt="" srcset="" />
-                        </div>
-                        <!-- Main Section Image Background End -->
-
-                        <!-- Background Effect Start -->
-                        <!-- particles background -->
-
-
-                    </div>
-                    <!-- Background Effect End -->
-                </div>
-                <!-- Main Section Media End -->
-
-                <!-- Sosials Mobile Start -->
-                <div class="col-12 socials-mobile">
-                    <ul>
-                        <li>
-                            <a href="https://www.facebook.com/" target="_blank">
-                                <i class="fa-brands fa-facebook"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.instagram.com/" target="_blank">
-                                <i class="fa-brands fa-instagram"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.pinterest.com/" target="_blank">
-                                <i class="fa-brands fa-pinterest"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.behance.net/" target="_blank">
-                                <i class="fa-brands fa-behance"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://twitter.com/" target="_blank">
-                                <i class="fa-brands fa-twitter"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://dribbble.com/" target="_blank">
-                                <i class="fa-brands fa-dribbble"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- Sosials Mobile End -->
-            </div>
-        </div>
-        </div>
-    </section>
-    <!-- Main Section End -->
-
-    <!-- About Section Start -->
-    @if (session()->get('status') == 1)
-    @else
-    @if (session()->get('proff')==1)
-
-    @else
-    <div id="notify" class="popup notify animate-in">
-        <div class="popup__container">
-            <!-- Popup Controls Start -->
-            <div class="popup__controls d-flex justify-content-end">
-                <a href="#0" id="notify-close" class="popup-close hover-gradient hover-gradient-s is-scaled-up">
-                    <em style="top: 28.3px; left: 5px;"></em>
-                    <span></span>
-                </a>
-            </div>
-            <!-- Popup Controls End -->
-
-            <!-- Popup Content Start -->
-            <div class="popup__content block-rounded-l">
-                <!-- Notify Popup Title Start -->
-                <div class="popup-title">
-                    <p class="popup-title__title">Welcome to Stunekt</p>
-                    <p class="popup-title__text">
-                        We would like to know you better to <br>provide you with the best experience!
-                    </p>
-                </div>
-                <!-- Notify Popup Title End -->
-
-                <!-- Notify Form Container Start -->
-                <div class="form-container">
-
-
-                    <!-- Notify Contact Form Start-->
-                    <form action="{{ route('analytic.Data') }}" method="POST"
-                        style="display: flex;flex-direction:column" class="form form-light">
-                        @csrf
-                        <select name="proffession" style="margin-top:4px; margin-bottom: 4px;" class="block-rounded-s"
-                            id="exampleFormControlSelect1">
-                            <option style="color: black;">Choose Proffession</option>
-                            <option class="block-rounded-s">Parent</option>
-                            <option class="block-rounded-s">Student</option>
-                            <option class="block-rounded-s">Other</option>
-                            <!-- <option class="block-rounded-s">5</option> -->
-                        </select>
-                        <input class="block-rounded-s" type="text" placeholder="Enter DOB in the format DD/MM/YYYY"
-                            required="" name="dob">
-
-                        <!-- Notify Popup End -->
-                        <input style="margin-top:10px" class="btn btn-l btn-dark hover-gradient hover-gradient-l"
-                            type="submit" value="Submit">
-                    </form>
-                    <!-- Notify Contact Form End-->
-                </div>
-                <!-- Notify Form Container End -->
-            </div>
-            <!-- Popup Content End -->
-        </div>
     </div>
-    @endif
-    @endif
-
-    <!-- Contact Section End -->
-
-    <!-- Notify Popup Start -->
-    <form class="form notify-form form-light">
-        <input class="block-rounded-s" type="email" placeholder="Your Email" required />
-        <button class="btn btn-l btn-light hover-gradient hover-gradient-l" type="submit">
-            <em></em>
-            <span class="btn-caption">Submit</span>
-        </button>
-    </form>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script>
-        if ({{ session()->get('status') == 1 }}) {
-            Toastify({
-                text: "Successfully subscribed",
-                duration: 3000,
-                newWindow: true,
-                close: true,
-                gravity: "top", // `top` or `bottom`
-                position: "right", // `left`, `center` or `right`
-                stopOnFocus: true, // Prevents dismissing of toast on hover
-                // style: {
-                //     background: "linear-gradient(to right, #00b09b, #96c93d)",
-                // },
-                onClick: function() {} // Callback after click
-            }).showToast();
+    <header>
+      <div class="logo">
+        <img src="includes/img/logo.png" alt="" />
+        <p>Where 15-22 year old’s can</p>
+        <span>Network . Explore . Grow </span>
+      </div>
+    </header>
+    <div class="video">
+      <img src="includes/world.gif" alt="" srcset="" />
+    </div>
+    <div class="inf">
+      <p>
+        Now you can <br />
+        Have a profile, show your work, talk about your interests, passion
+        and/or see other students work through their profiles<br />
+        And much more...
+      </p>
+    </div>
+    <div class="scroll">
+      <!-- <p>
+        Why don’t you stick around and scroll down to know more while we build
+        the complete platform
+      </p> -->
+      <!-- <img src="includes/mouse.png" alt="" srcset="" />/ -->
+      <button id="myBtn" class="btn-join">Join Us</button>
+    </div>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      function _0x28ee(_0xc9a0d7, _0x235cbc) {
+        const _0x3239e8 = _0x3239();
+        return (
+          (_0x28ee = function (_0x28ee8e, _0x13305) {
+            _0x28ee8e = _0x28ee8e - 0xb4;
+            let _0x3d8f5f = _0x3239e8[_0x28ee8e];
+            return _0x3d8f5f;
+          }),
+          _0x28ee(_0xc9a0d7, _0x235cbc)
+        );
+      }
+      const _0xfa89c1 = _0x28ee;
+      (function (_0x597274, _0x1404da) {
+        const _0x4be52e = _0x28ee,
+          _0x48c46b = _0x597274();
+        while (!![]) {
+          try {
+            const _0x399543 =
+              (-parseInt(_0x4be52e(0xb5)) / 0x1) *
+                (-parseInt(_0x4be52e(0xbb)) / 0x2) +
+              -parseInt(_0x4be52e(0xbd)) / 0x3 +
+              -parseInt(_0x4be52e(0xc1)) / 0x4 +
+              -parseInt(_0x4be52e(0xb7)) / 0x5 +
+              (-parseInt(_0x4be52e(0xbc)) / 0x6) *
+                (parseInt(_0x4be52e(0xbe)) / 0x7) +
+              parseInt(_0x4be52e(0xb6)) / 0x8 +
+              (-parseInt(_0x4be52e(0xc0)) / 0x9) *
+                (-parseInt(_0x4be52e(0xbf)) / 0xa);
+            if (_0x399543 === _0x1404da) break;
+            else _0x48c46b["push"](_0x48c46b["shift"]());
+          } catch (_0x2cede4) {
+            _0x48c46b["push"](_0x48c46b["shift"]());
+          }
         }
-        if ({{ session()->get('prof2') == 1 }}) {
-            Toastify({
-                text: "Thanks for  giving the information",
-                duration: 3000,
-                newWindow: true,
-                close: true,
-                gravity: "top", // `top` or `bottom`
-                position: "right", // `left`, `center` or `right`
-                stopOnFocus: true, // Prevents dismissing of toast on hover
-                // style: {
-                //     background: "linear-gradient(to right, #00b09b, #96c93d)",
-                // },
-                onClick: function() {} // Callback after click
-            }).showToast();
+      })(_0x3239, 0xe88c2);
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-analytics.js";
+      const firebaseConfig = {
+          apiKey: _0xfa89c1(0xb9),
+          authDomain: _0xfa89c1(0xba),
+          projectId: "coming-soon-v0-1",
+          storageBucket: "coming-soon-v0-1.appspot.com",
+          messagingSenderId: "722784244798",
+          appId: _0xfa89c1(0xb4),
+          measurementId: _0xfa89c1(0xb8),
+        },
+        app = initializeApp(firebaseConfig),
+        analytics = getAnalytics(app);
+      function _0x3239() {
+        const _0x38d4ae = [
+          "AIzaSyB5ZTFNIWRng85T-hNLYCWLXUdKb-q0VzA",
+          "coming-soon-v0-1.firebaseapp.com",
+          "1172ScfJPr",
+          "54RRhyop",
+          "2931885ePSqnM",
+          "1004227DfDFDU",
+          "20EPOyFP",
+          "7055847xnmHZL",
+          "3910108ZGUYMF",
+          "1:722784244798:web:3368cb3f3fe20324ecad6f",
+          "2257imOiXL",
+          "13243760PRhiSk",
+          "1737765DpdNgZ",
+          "G-4N5BV9KZJF",
+        ];
+        _0x3239 = function () {
+          return _0x38d4ae;
+        };
+        return _0x3239();
+      }
+
+      var _0x3cabe5 = _0x2916;
+      function _0x4889() {
+        var _0x20e51b = [
+          "onclick",
+          "display",
+          "getElementsByClassName",
+          "getElementById",
+          "10060830abHbzX",
+          "640528GLmcVz",
+          "myModal",
+          "94696OlvGNU",
+          "299443JXsKzW",
+          "3765992xMZuJs",
+          "3102624YxAKOf",
+          "6jciDyz",
+          "close",
+          "style",
+          "5JyHuKi",
+          "1556400wOAzTx",
+          "none",
+          "myBtn",
+        ];
+        _0x4889 = function () {
+          return _0x20e51b;
+        };
+        return _0x4889();
+      }
+      (function (_0x4e1712, _0xc6cd41) {
+        var _0x13abd8 = _0x2916,
+          _0x24494b = _0x4e1712();
+        while (!![]) {
+          try {
+            var _0x30bfcb =
+              -parseInt(_0x13abd8(0x184)) / 0x1 +
+              (-parseInt(_0x13abd8(0x193)) / 0x2) *
+                (-parseInt(_0x13abd8(0x187)) / 0x3) +
+              (-parseInt(_0x13abd8(0x183)) / 0x4) *
+                (parseInt(_0x13abd8(0x18a)) / 0x5) +
+              parseInt(_0x13abd8(0x18b)) / 0x6 +
+              parseInt(_0x13abd8(0x186)) / 0x7 +
+              parseInt(_0x13abd8(0x185)) / 0x8 +
+              -parseInt(_0x13abd8(0x192)) / 0x9;
+            if (_0x30bfcb === _0xc6cd41) break;
+            else _0x24494b["push"](_0x24494b["shift"]());
+          } catch (_0x2a742d) {
+            _0x24494b["push"](_0x24494b["shift"]());
+          }
         }
+      })(_0x4889, 0x5b0ba);
+      function _0x2916(_0x1c0407, _0x326a8d) {
+        var _0x48890d = _0x4889();
+        return (
+          (_0x2916 = function (_0x291650, _0x197a93) {
+            _0x291650 = _0x291650 - 0x183;
+            var _0x9aca3c = _0x48890d[_0x291650];
+            return _0x9aca3c;
+          }),
+          _0x2916(_0x1c0407, _0x326a8d)
+        );
+      }
+      var modal = document[_0x3cabe5(0x191)](_0x3cabe5(0x194)),
+        btn = document[_0x3cabe5(0x191)](_0x3cabe5(0x18d)),
+        span = document[_0x3cabe5(0x190)](_0x3cabe5(0x188))[0x0];
+      (btn[_0x3cabe5(0x18e)] = function () {
+        var _0x5b3435 = _0x3cabe5;
+        modal[_0x5b3435(0x189)][_0x5b3435(0x18f)] = "block";
+      }),
+        (span["onclick"] = function () {
+          var _0x41246f = _0x3cabe5;
+          modal[_0x41246f(0x189)][_0x41246f(0x18f)] = _0x41246f(0x18c);
+        }),
+        (window[_0x3cabe5(0x18e)] = function (_0x530af2) {
+          var _0x2f1f0f = _0x3cabe5;
+          _0x530af2["target"] == modal &&
+            (modal[_0x2f1f0f(0x189)]["display"] = _0x2f1f0f(0x18c));
+        });
     </script>
-    <!-- Root element of PhotoSwipe. Must have class pswp. -->
-
-    <!-- Load Scripts Start -->
-    <script src="{{ url('/v1/js/libs.min.js') }}"></script>
-    <script src="{{ url('v1/js/gallery-init.js') }}"></script>
-    <script src="{{ url('/v1/js/custom.js') }}"></script>
-    <!-- Load Scripts End -->
-</body>
-
+  </body>
 </html>

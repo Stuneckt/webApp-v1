@@ -42,6 +42,6 @@ class WebController extends Controller
         $data->browser = $request->server('HTTP_USER_AGENT');
         $data->save();
         session()->put('proff', 1);
-        return back()->with('prof2',1);
+        return back()->with('prof2', 1);
     }
 }

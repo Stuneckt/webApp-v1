@@ -26,3 +26,6 @@ Route::controller(WebController::class)->group(function () {
 
     Route::post('/analyticData', 'analyticData')->name('analytic.Data');
 });
+Route::get('/hello',function(){
+    return "Testing new Keyboard";
+});
